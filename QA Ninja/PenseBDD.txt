@@ -1,0 +1,34 @@
+Validar Cadastro de Usuário : Email Válido
+	Acessar Página Principal
+	Inserir Email Válido
+	Submeter Cadastro
+	Conferir se estou autenticado
+
+-----------
+
+como BDD...
+Cadastro Simplificado
+usando Gherkin (Dado, Quando e Então)
+	Dado que acesso a página principal
+	E preencho o campo email com endereço válido
+	Quando submeto o cadastro
+	Então sou autenticado com sucesso
+
+* isso não um BDD mas um BDT (Behaviour Driven-Test)
+	Note que não mudou nada do Caso de Teste Tradicional ( step > resultado esperado )
+
+Especificar como o usuário final usará o software, não como será testado!
+
+-----------------
+
+Cadastro simples
+	Dado que acesso a página principal
+	Quando submeto o email "joao@gmail.com"
+	Então devo ser autenticado
+
+* use o BDD em primeira pessoa!!
+	3 linhas de step em cenário BDD
+* sem detalhes de clicks, preenchimento de campos, deixando o óbvio de fora!
+Documentação voltado pro negócio e pro time todo
+* unifique o cenário em BDD com a massa de teste ; então sem plano de teste e massa de teste!
+** pensar como o software será USADO no lugar de como será TESTADO !!!
