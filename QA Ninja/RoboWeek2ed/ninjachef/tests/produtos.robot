@@ -6,7 +6,7 @@ Documentation   Cadastro de produtos/pratos
 
 Resource        ../resources/base.robot
 
-Test Setup      Login Session   marcelomiranda70@gmail.com
+Test Setup      Login Session   joao@gmail.com
 Test Teardown   Close Session
 
 ***Variables***
