@@ -1,18 +1,5 @@
 ***Settings***
-Documentation       Testes do Login no NinjaChef Mobile
-# pode colocar história do usuário, descrição curta
-# - como o projeto pedir!
-
-Resource        ../resources/base.robot
-
-Test Setup      Open Session
-Test Teardown   Close Session
-
-***Test Cases***
-Acessar cardapio
-    Dado que desejo comer "Massas"    # motivação
-    Quando submeto meu email "joao@gmmail.com"
-    Então devo ver a lista de pratos por tipo
+Documentation       palavras-chave do projeto
 
 ***Keywords***
 Dado que desejo comer "${prato}"    # apesar desta ordem, informamos email primeiro
