@@ -17,4 +17,5 @@ Open Session
     ...                     adbExecTimeout=120000
 
 Close Session
+    Capture Page Screenshot     # direto assim! ;)
     Close Application
