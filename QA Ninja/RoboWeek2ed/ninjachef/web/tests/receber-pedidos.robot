@@ -6,6 +6,8 @@ Documentation       Receber pedidos
 
 Resource        ../resources/base.robot
 
+Library         RequestsLibrary
+
 Test Setup      Open Session
 Test Teardown   Close Session
 
@@ -22,6 +24,17 @@ Receber novo pedido
 ***Keywords***
 Dado que "${email_cozinheiro}" é minha conta de cozinheiro
     Set Test Variable       ${email_cozinheiro}
+
+    &{headers}=       Create Dictionary     Content-Type=application/json
+    &{payload}=       Create Dictionary     email=${email_cozinheiro}
+
+# próximas 3 linhas baseadas em https://github.com/MarketSquare/robotframework-requests#readme
+    Create Session    api         http://ninjachef-api-qaninja-io.umbler.net
+    ${resp}=          Post Request   api        /sessions   data=${payload}     headers=${headers}
+    Status Should Be  200            ${resp}
+
+#    Log To Console      ${resp.text} # token do pedido
+    Log To Console      ${resp.json()['_id']}   # token do eduguedes - do PostMan em Headers pro Login
 
 E "${email_cliente}" é o email do meu cliente
     Set Test Variable       ${email_cliente}
