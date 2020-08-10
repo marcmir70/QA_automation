@@ -234,7 +234,8 @@ given `alias`</doc>
 <msg timestamp="20200809 21:20:34.029" level="INFO">${image_file} = \xff\xd8\xff\xe0JFIF\xff\xdb\x84	( %!1"%)+...383-7(-.+
 
 
--% %--------------------------------------------------\xff\xc0\xb3...</msg>
+
+-% %--------------------------------------------------\xff\xc0\xb3...</msg>
 <status status="PASS" starttime="20200809 21:20:34.003" endtime="20200809 21:20:34.029"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
@@ -248,7 +249,8 @@ given `alias`</doc>
 <msg timestamp="20200809 21:20:34.048" level="INFO">&amp;{files} = { thumbnail=\xff\xd8\xff\xe0JFIF\xff\xdb\x84	( %!1"%)+...383-7(-.+
 
 
--% %--------------------------------------------------\xff\xc0\...</msg>
+
+-% %--------------------------------------------------\xff\xc0\...</msg>
 <status status="PASS" starttime="20200809 21:20:34.030" endtime="20200809 21:20:34.048"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
