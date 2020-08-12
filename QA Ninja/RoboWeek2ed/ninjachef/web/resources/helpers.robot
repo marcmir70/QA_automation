@@ -14,3 +14,16 @@ Login Session
 #    Sleep           5
 
     Wait Until Page Contains Element        ${DIV_DASH}
+
+Get API Token   # recomendda-se começar o nome da Keyword com GET para as que retornem uma informação...
+    [Arguments]     ${email_param}
+
+    &{headers}=       Create Dictionary     Content-Type=application/json
+    &{payload}=       Create Dictionary     email=${email_param}
+
+    Create Session    api         ${api_url}
+    ${resp}=          Post Request   api        /sessions   data=${payload}     headers=${headers}
+    Status Should Be  200            ${resp}
+
+    ${token}     Convert To String   ${resp.json()['_id']}
+    [return]    ${token}
