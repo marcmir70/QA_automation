@@ -95,5 +95,13 @@ Quando o cliente solicita o preparo desse prato
     ${token_cozinheiro}     Convert To String   ${resp.json()['_id']}
     Set Test Variable       ${token_cozinheiro}
 
-    # Temporário
-    Sleep       5
+##    # Temporário
+##    Sleep       5
+
+Então devo receber uma notificação de pedido desse produto
+    ${mensagem_esperada}    Convert To String   ${email_cliente} está solicitando o preparo do seguinte prato: ${produto}
+    Wait Until Page Contains        ${mensagem_esperada}    5
+
+E posso aceitar ou rejeitar esse pedido
+    Wait Until Page Contains        ACEITAR     5
+    Wait Until Page Contains        REJEITAR     5
