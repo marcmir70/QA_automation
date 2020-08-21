@@ -1,0 +1,561 @@
+
+
+
+Instalacao do Docker ENGINE
+* não há Docker Desktop para LINUX !!!
+
+
+
+
+
+
+
+
+
+
+celo-ub@Lenovo-Z40-70-celo:~$ sudo apt-get remove docker docker-engine docker.io containerd runc
+[sudo] password for celo-ub: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package docker-engine
+celo-ub@Lenovo-Z40-70-celo:~$ sudo apt-get update
+Hit:1 http://br.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://br.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://br.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
+Reading package lists... Done
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ sudo apt-get install \
+>     apt-transport-https \
+>     ca-certificates \
+>     curl \
+>     gnupg-agent \
+>     software-properties-common
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+ca-certificates is already the newest version (20190110ubuntu1.1).
+ca-certificates set to manually installed.
+software-properties-common is already the newest version (0.98.9.2).
+software-properties-common set to manually installed.
+The following packages were automatically installed and are no longer required:
+  libasound2-dev libblkid-dev libbullet2.88 libdbus-1-dev libegl-dev libegl1-mesa-dev libffi-dev
+  libfprint-2-tod1 libgl-dev libgl1-mesa-dev libgles-dev libgles1 libgles2-mesa-dev libglib2.0-dev
+  libglib2.0-dev-bin libglu1-mesa-dev libglvnd-dev libglx-dev libibus-1.0-dev libllvm9 libmount-dev libogg-dev
+  libopengl-dev libopengl0 libpcre16-3 libpcre2-16-0 libpcre2-dev libpcre2-posix2 libpcre3-dev libpcre32-3
+  libpcrecpp0v5 libpulse-dev libsdl2-image-2.0-0 libselinux1-dev libsepol1-dev libsndio-dev libudev-dev
+  libwayland-bin libwayland-dev libxcursor-dev libxext-dev libxfixes-dev libxi-dev libxinerama-dev
+  libxkbcommon-dev libxrandr-dev libxrender-dev libxss-dev libxv-dev libxxf86vm-dev python3-click
+  python3-colorama uuid-dev x11proto-input-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-xext-dev
+  x11proto-xf86vidmode-dev x11proto-xinerama-dev
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libcurl4
+The following NEW packages will be installed:
+  apt-transport-https curl gnupg-agent
+The following packages will be upgraded:
+  libcurl4
+1 upgraded, 3 newly installed, 0 to remove and 9 not upgraded.
+Need to get 401 kB of archives.
+After this operation, 616 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://br.archive.ubuntu.com/ubuntu focal-updates/universe amd64 apt-transport-https all 2.0.2ubuntu0.1 [1.708 B]
+Get:2 http://br.archive.ubuntu.com/ubuntu focal-updates/main amd64 libcurl4 amd64 7.68.0-1ubuntu2.2 [233 kB]
+Get:3 http://br.archive.ubuntu.com/ubuntu focal-updates/main amd64 curl amd64 7.68.0-1ubuntu2.2 [161 kB]
+Get:4 http://br.archive.ubuntu.com/ubuntu focal/universe amd64 gnupg-agent all 2.2.19-3ubuntu2 [5.236 B]
+Fetched 401 kB in 0s (1.010 kB/s)       
+Selecting previously unselected package apt-transport-https.
+(Reading database ... 194579 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_2.0.2ubuntu0.1_all.deb ...
+Unpacking apt-transport-https (2.0.2ubuntu0.1) ...
+Preparing to unpack .../libcurl4_7.68.0-1ubuntu2.2_amd64.deb ...
+Unpacking libcurl4:amd64 (7.68.0-1ubuntu2.2) over (7.68.0-1ubuntu2.1) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../curl_7.68.0-1ubuntu2.2_amd64.deb ...
+Unpacking curl (7.68.0-1ubuntu2.2) ...
+Selecting previously unselected package gnupg-agent.
+Preparing to unpack .../gnupg-agent_2.2.19-3ubuntu2_all.deb ...
+Unpacking gnupg-agent (2.2.19-3ubuntu2) ...
+Setting up apt-transport-https (2.0.2ubuntu0.1) ...
+Setting up gnupg-agent (2.2.19-3ubuntu2) ...
+Setting up libcurl4:amd64 (7.68.0-1ubuntu2.2) ...
+Setting up curl (7.68.0-1ubuntu2.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9) ...
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+OK
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ sudo apt-key fingerprint 0EBFCD88
+pub   rsa4096 2017-02-22 [SCEA]
+      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
+sub   rsa4096 2017-02-22 [S]
+
+celo-ub@Lenovo-Z40-70-celo:~$ sudo add-apt-repository \
+>    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+>    $(lsb_release -cs) \
+>    stable"
+Get:1 https://download.docker.com/linux/ubuntu focal InRelease [36,2 kB]
+Hit:2 http://br.archive.ubuntu.com/ubuntu focal InRelease
+Hit:3 http://br.archive.ubuntu.com/ubuntu focal-updates InRelease
+Get:4 https://download.docker.com/linux/ubuntu focal/stable amd64 Packages [3.056 B]
+Hit:5 http://br.archive.ubuntu.com/ubuntu focal-backports InRelease                     
+Hit:6 http://security.ubuntu.com/ubuntu focal-security InRelease
+Fetched 39,2 kB in 1s (44,5 kB/s)
+Reading package lists... Done
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ sudo apt-get update
+Hit:1 https://download.docker.com/linux/ubuntu focal InRelease
+Hit:2 http://br.archive.ubuntu.com/ubuntu focal InRelease
+Hit:3 http://br.archive.ubuntu.com/ubuntu focal-updates InRelease          
+Hit:4 http://br.archive.ubuntu.com/ubuntu focal-backports InRelease        
+Hit:5 http://security.ubuntu.com/ubuntu focal-security InRelease           
+Reading package lists... Done
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ udo apt-get install docker-ce docker-ce-cli containerd.io
+
+Command 'udo' not found, but can be installed with:
+
+sudo apt install udo
+
+celo-ub@Lenovo-Z40-70-celo:~$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libasound2-dev libblkid-dev libbullet2.88 libdbus-1-dev libegl-dev libegl1-mesa-dev libffi-dev
+  libfprint-2-tod1 libgl-dev libgl1-mesa-dev libgles-dev libgles1 libgles2-mesa-dev libglib2.0-dev
+  libglib2.0-dev-bin libglu1-mesa-dev libglvnd-dev libglx-dev libibus-1.0-dev libllvm9 libmount-dev libogg-dev
+  libopengl-dev libopengl0 libpcre16-3 libpcre2-16-0 libpcre2-dev libpcre2-posix2 libpcre3-dev libpcre32-3
+  libpcrecpp0v5 libpulse-dev libsdl2-image-2.0-0 libselinux1-dev libsepol1-dev libsndio-dev libudev-dev
+  libwayland-bin libwayland-dev libxcursor-dev libxext-dev libxfixes-dev libxi-dev libxinerama-dev
+  libxkbcommon-dev libxrandr-dev libxrender-dev libxss-dev libxv-dev libxxf86vm-dev python3-click
+  python3-colorama uuid-dev x11proto-input-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-xext-dev
+  x11proto-xf86vidmode-dev x11proto-xinerama-dev
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  aufs-tools cgroupfs-mount pigz
+The following NEW packages will be installed:
+  aufs-tools cgroupfs-mount containerd.io docker-ce docker-ce-cli pigz
+0 upgraded, 6 newly installed, 0 to remove and 9 not upgraded.
+Need to get 85,3 MB of archives.
+After this operation, 381 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 https://download.docker.com/linux/ubuntu focal/stable amd64 containerd.io amd64 1.2.13-2 [21,4 MB]
+Get:2 http://br.archive.ubuntu.com/ubuntu focal/universe amd64 pigz amd64 2.4-1 [57,4 kB]
+Get:3 http://br.archive.ubuntu.com/ubuntu focal/universe amd64 aufs-tools amd64 1:4.14+20190211-1ubuntu1 [104 kB]
+Get:4 http://br.archive.ubuntu.com/ubuntu focal/universe amd64 cgroupfs-mount all 1.4 [6.320 B]
+Get:5 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-ce-cli amd64 5:19.03.12~3-0~ubuntu-focal [41,2 MB]
+Get:6 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-ce amd64 5:19.03.12~3-0~ubuntu-focal [22,5 MB]
+Fetched 85,3 MB in 8s (10,3 MB/s)                                                                                
+Selecting previously unselected package pigz.
+(Reading database ... 194594 files and directories currently installed.)
+Preparing to unpack .../0-pigz_2.4-1_amd64.deb ...
+Unpacking pigz (2.4-1) ...
+Selecting previously unselected package aufs-tools.
+Preparing to unpack .../1-aufs-tools_1%3a4.14+20190211-1ubuntu1_amd64.deb ...
+Unpacking aufs-tools (1:4.14+20190211-1ubuntu1) ...
+Selecting previously unselected package cgroupfs-mount.
+Preparing to unpack .../2-cgroupfs-mount_1.4_all.deb ...
+Unpacking cgroupfs-mount (1.4) ...
+Selecting previously unselected package containerd.io.
+Preparing to unpack .../3-containerd.io_1.2.13-2_amd64.deb ...
+Unpacking containerd.io (1.2.13-2) ...
+Selecting previously unselected package docker-ce-cli.
+Preparing to unpack .../4-docker-ce-cli_5%3a19.03.12~3-0~ubuntu-focal_amd64.deb ...
+Unpacking docker-ce-cli (5:19.03.12~3-0~ubuntu-focal) ...
+Selecting previously unselected package docker-ce.
+Preparing to unpack .../5-docker-ce_5%3a19.03.12~3-0~ubuntu-focal_amd64.deb ...
+Unpacking docker-ce (5:19.03.12~3-0~ubuntu-focal) ...
+Setting up aufs-tools (1:4.14+20190211-1ubuntu1) ...
+Setting up containerd.io (1.2.13-2) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.
+Setting up docker-ce-cli (5:19.03.12~3-0~ubuntu-focal) ...
+Setting up pigz (2.4-1) ...
+Setting up cgroupfs-mount (1.4) ...
+Setting up docker-ce (5:19.03.12~3-0~ubuntu-focal) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+Processing triggers for systemd (245.4-4ubuntu3.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9) ...
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ apt-cache madison docker-ce
+ docker-ce | 5:19.03.12~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:19.03.11~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:19.03.10~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:19.03.9~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+0e03bdcc26d7: Pull complete 
+Digest: sha256:7f0a9f93b4aa3022c3a4c147a449bf11e0941a1fd0bf4a8e6c9408b2600777c5
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+celo-ub@Lenovo-Z40-70-celo:~$ docker ps
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied
+celo-ub@Lenovo-Z40-70-celo:~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+celo-ub@Lenovo-Z40-70-celo:~$ echo "16:30"
+16:30
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+celo-ub@Lenovo-Z40-70-celo:~$ 
+
+
+
+
+
+
+
+
+
+
+
+16:30	
+	sudo docker ps
+
+17:23-18:15
+	cd /
+	sudo mkdir qaninja
+	cd qaninja
+
+	sudo mkdir ze-palheta
+
+	unzip ze-palheta
+
+* no Windows via Git Bash
+* no Ubuntu via terminal
+19:15-22:37
+	docker-compose up -d
+	 * se ocorrer o erro abaixo...
+		Command 'docker-compose' not found, but can be installed with:
+		sudo snap install docker          # version 19.03.11, or
+		sudo apt  install docker-compose  # version 1.25.0-1
+		See 'snap info docker' for additional versions.
+		$
+	 
+	   ...proceder a instalacao do Docker Compose com o comando indicado
+	sudo apt  install docker-compose
+		Reading package lists... Done
+		Building dependency tree       
+		Reading state information... Done
+		The following packages were automatically installed and are no longer required:
+		  libasound2-dev libblkid-dev libbullet2.88 libdbus-1-dev libegl-dev libegl1-mesa-dev libffi-dev libfprint-2-tod1
+		  libgl-dev libgl1-mesa-dev libgles-dev libgles1 libgles2-mesa-dev libglib2.0-dev libglib2.0-dev-bin
+		  libglu1-mesa-dev libglvnd-dev libglx-dev libibus-1.0-dev libllvm9 libmount-dev libogg-dev libopengl-dev
+		  libopengl0 libpcre16-3 libpcre2-16-0 libpcre2-dev libpcre2-posix2 libpcre3-dev libpcre32-3 libpcrecpp0v5
+		  libpulse-dev libsdl2-image-2.0-0 libselinux1-dev libsepol1-dev libsndio-dev libudev-dev libwayland-bin
+		  libwayland-dev libxcursor-dev libxext-dev libxfixes-dev libxi-dev libxinerama-dev libxkbcommon-dev
+		  libxrandr-dev libxrender-dev libxss-dev libxv-dev libxxf86vm-dev python3-click python3-colorama uuid-dev
+		  x11proto-input-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-xext-dev x11proto-xf86vidmode-dev
+		  x11proto-xinerama-dev
+		Use 'sudo apt autoremove' to remove them.
+		The following additional packages will be installed:
+		  python3-attr python3-cached-property python3-docker python3-dockerpty python3-docopt python3-importlib-metadata
+		  python3-jsonschema python3-more-itertools python3-pyrsistent python3-texttable python3-websocket python3-zipp
+		Suggested packages:
+		  python-attr-doc python-jsonschema-doc
+		Recommended packages:
+		  docker.io
+		The following NEW packages will be installed:
+		  docker-compose python3-attr python3-cached-property python3-docker python3-dockerpty python3-docopt
+		  python3-importlib-metadata python3-jsonschema python3-more-itertools python3-pyrsistent python3-texttable
+		  python3-websocket python3-zipp
+		0 upgraded, 13 newly installed, 0 to remove and 9 not upgraded.
+		Need to get 445 kB of archives.
+		After this operation, 2.574 kB of additional disk space will be used.
+		Do you want to continue? [Y/n] Y
+		Get:1 http://br.archive.ubuntu.com/ubuntu focal/universe amd64 python3-cached-property all 1.5.1-4 [10,9 kB]
+		Get:2 http://br.archive.ubuntu.com/ubuntu focal/universe amd64 python3-websocket all 0.53.0-2ubuntu1 [32,3 kB]
+		Get:3 http://br.archive.ubuntu.com/ubuntu focal/universe amd64 python3-docker all 4.1.0-1 [83,8 kB]
+		Get:4 http://br.archive.ubuntu.com/ubuntu focal/universe amd64 python3-dockerpty all 0.4.1-2 [11,1 kB]
+		Get:5 http://br.archive.ubuntu.com/ubuntu focal/universe amd64 python3-docopt all 0.6.2-2.2ubuntu1 [19,7 kB]
+		Get:6 http://br.archive.ubuntu.com/ubuntu focal/main amd64 python3-attr all 19.3.0-2 [33,9 kB]
+		Get:7 http://br.archive.ubuntu.com/ubuntu focal/main amd64 python3-more-itertools all 4.2.0-1build1 [39,4 kB]
+		Get:8 http://br.archive.ubuntu.com/ubuntu focal/main amd64 python3-zipp all 1.0.0-1 [5.312 B]
+		Get:9 http://br.archive.ubuntu.com/ubuntu focal/main amd64 python3-importlib-metadata all 1.5.0-1 [9.992 B]
+		Get:10 http://br.archive.ubuntu.com/ubuntu focal/main amd64 python3-pyrsistent amd64 0.15.5-1build1 [52,1 kB]
+		Get:11 http://br.archive.ubuntu.com/ubuntu focal/main amd64 python3-jsonschema all 3.2.0-0ubuntu2 [43,1 kB]
+		Get:12 http://br.archive.ubuntu.com/ubuntu focal/universe amd64 python3-texttable all 1.6.2-2 [11,0 kB]
+		Get:13 http://br.archive.ubuntu.com/ubuntu focal/universe amd64 docker-compose all 1.25.0-1 [92,7 kB]
+		Fetched 445 kB in 1s (781 kB/s)         
+		Selecting previously unselected package python3-cached-property.
+		(Reading database ... 194897 files and directories currently installed.)
+		Preparing to unpack .../00-python3-cached-property_1.5.1-4_all.deb ...
+		Unpacking python3-cached-property (1.5.1-4) ...
+		Selecting previously unselected package python3-websocket.
+		Preparing to unpack .../01-python3-websocket_0.53.0-2ubuntu1_all.deb ...
+		Unpacking python3-websocket (0.53.0-2ubuntu1) ...
+		Selecting previously unselected package python3-docker.
+		Preparing to unpack .../02-python3-docker_4.1.0-1_all.deb ...
+		Unpacking python3-docker (4.1.0-1) ...
+		Selecting previously unselected package python3-dockerpty.
+		Preparing to unpack .../03-python3-dockerpty_0.4.1-2_all.deb ...
+		Unpacking python3-dockerpty (0.4.1-2) ...
+		Selecting previously unselected package python3-docopt.
+		Preparing to unpack .../04-python3-docopt_0.6.2-2.2ubuntu1_all.deb ...
+		Unpacking python3-docopt (0.6.2-2.2ubuntu1) ...
+		Selecting previously unselected package python3-attr.
+		Preparing to unpack .../05-python3-attr_19.3.0-2_all.deb ...
+		Unpacking python3-attr (19.3.0-2) ...
+		Selecting previously unselected package python3-more-itertools.
+		Preparing to unpack .../06-python3-more-itertools_4.2.0-1build1_all.deb ...
+		Unpacking python3-more-itertools (4.2.0-1build1) ...
+		Selecting previously unselected package python3-zipp.
+		Preparing to unpack .../07-python3-zipp_1.0.0-1_all.deb ...
+		Unpacking python3-zipp (1.0.0-1) ...
+		Selecting previously unselected package python3-importlib-metadata.
+		Preparing to unpack .../08-python3-importlib-metadata_1.5.0-1_all.deb ...
+		Unpacking python3-importlib-metadata (1.5.0-1) ...
+		Selecting previously unselected package python3-pyrsistent:amd64.
+		Preparing to unpack .../09-python3-pyrsistent_0.15.5-1build1_amd64.deb ...
+		Unpacking python3-pyrsistent:amd64 (0.15.5-1build1) ...
+		Selecting previously unselected package python3-jsonschema.
+		Preparing to unpack .../10-python3-jsonschema_3.2.0-0ubuntu2_all.deb ...
+		Unpacking python3-jsonschema (3.2.0-0ubuntu2) ...
+		Selecting previously unselected package python3-texttable.
+		Preparing to unpack .../11-python3-texttable_1.6.2-2_all.deb ...
+		Unpacking python3-texttable (1.6.2-2) ...
+		Selecting previously unselected package docker-compose.
+		Preparing to unpack .../12-docker-compose_1.25.0-1_all.deb ...
+		Unpacking docker-compose (1.25.0-1) ...
+		Setting up python3-cached-property (1.5.1-4) ...
+		Setting up python3-more-itertools (4.2.0-1build1) ...
+		Setting up python3-attr (19.3.0-2) ...
+		Setting up python3-texttable (1.6.2-2) ...
+		Setting up python3-docopt (0.6.2-2.2ubuntu1) ...
+		Setting up python3-zipp (1.0.0-1) ...
+		Setting up python3-pyrsistent:amd64 (0.15.5-1build1) ...
+		Setting up python3-websocket (0.53.0-2ubuntu1) ...
+		update-alternatives: using /usr/bin/python3-wsdump to provide /usr/bin/wsdump (wsdump) in auto mode
+		Setting up python3-dockerpty (0.4.1-2) ...
+		Setting up python3-importlib-metadata (1.5.0-1) ...
+		Setting up python3-docker (4.1.0-1) ...
+		Setting up python3-jsonschema (3.2.0-0ubuntu2) ...
+		Setting up docker-compose (1.25.0-1) ...
+		Processing triggers for man-db (2.9.1-1) ...
+		$
+		
+	confirme a instalacao com
+	which docker-compose
+		/usr/bin/docker-compose
+		$
+	...e/ou com 
+	docker-compose version
+		docker-compose version 1.25.0, build unknown
+		docker-py version: 4.1.0
+		CPython version: 3.8.2
+		OpenSSL version: OpenSSL 1.1.1f  31 Mar 2020
+		$
+
+	sudo docker-compose up -d
+		Creating network "zepalheta-network" with driver "bridge"
+		Pulling zepalheta-postgres (postgres:)...
+		latest: Pulling from library/postgres
+		bf5952930446: Pull complete
+		9577476abb00: Pull complete
+		2bd105512d5c: Pull complete
+		b1cd21c26e81: Pull complete
+		34a7c86cf8fc: Pull complete
+		274e7b0c38d5: Pull complete
+		3e831b350d37: Pull complete
+		38fa0d496534: Pull complete
+		c989da35e5c0: Pull complete
+		26dc6fdd7b2d: Pull complete
+		3c5032512cf3: Pull complete
+		26910ececf99: Pull complete
+		0339413523e8: Pull complete
+		d61df7db53da: Pull complete
+		Digest: sha256:9f325740426d14a92f71013796d98a50fe385da64a7c5b6b753d0705add05a21
+		Status: Downloaded newer image for postgres:latest
+		Pulling zepalheta-pgadmin (dpage/pgadmin4:)...
+		latest: Pulling from dpage/pgadmin4
+		cbdbe7a5bc2a: Pull complete
+		26ebcd19a4e3: Pull complete
+		a29d43ca1bb4: Pull complete
+		979dbbcf63e0: Pull complete
+		30beed04940c: Pull complete
+		0c7c2eba55ac: Pull complete
+		67af176baacb: Pull complete
+		ac3d6653e2f9: Pull complete
+		054ec30d317f: Pull complete
+		435799ca1a66: Pull complete
+		86289d85d39d: Pull complete
+		e461e9d06549: Pull complete
+		6e231cca6dde: Pull complete
+		80a16767b010: Pull complete
+		0d92cf3050d1: Pull complete
+		213bafc0ede9: Pull complete
+		ce235987d6c4: Pull complete
+		eaa1a30d12b2: Pull complete
+		94accbedb0e5: Pull complete
+		Digest: sha256:27e074c2653e5ae2fae6bd0dac2843101bb90bc2c6bc96415fa2726bae9dcf55
+		Status: Downloaded newer image for dpage/pgadmin4:latest
+		Pulling zepalheta-api (qaninja/zp-api:)...
+		latest: Pulling from qaninja/zp-api
+		cbdbe7a5bc2a: Already exists
+		091983d60f65: Pull complete
+		7bacc183740f: Pull complete
+		c4a5a5d270d4: Pull complete
+		32ba067f0b15: Pull complete
+		c4d0bf80da58: Pull complete
+		988907104a00: Pull complete
+		d466de884b10: Pull complete
+		Digest: sha256:150d4ca946627d4c6f0dea1c89c89c94f710769ba31b6ab9e42b01354e376537
+		Status: Downloaded newer image for qaninja/zp-api:latest
+		Pulling zepalheta-web (qaninja/zp-web:)...
+		latest: Pulling from qaninja/zp-web
+		cbdbe7a5bc2a: Already exists
+		091983d60f65: Already exists
+		7bacc183740f: Already exists
+		c4a5a5d270d4: Already exists
+		76b2e6281e53: Pull complete
+		63bc9387c722: Pull complete
+		e513ced20fa8: Pull complete
+		f9e4f1bca708: Pull complete
+		Digest: sha256:37501ef6d9cac6efbe2581c9642e91b90e05f922438a3850b474ef786752728d
+		Status: Downloaded newer image for qaninja/zp-web:latest
+		Creating zepalheta-pgadmin  ... done
+		Creating zepalheta-web      ... done
+		Creating zepalheta-api      ... done
+		Creating zepalheta-postgres ... done
+		$ 
+
+22:52
+	sudo docker ps
+		CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                            NAMES
+		37b607e032a7        postgres            "docker-entrypoint.s…"   10 minutes ago      Up 9 minutes        0.0.0.0:5432->5432/tcp           zepalheta-postgres
+		72cbe2be2f82        dpage/pgadmin4      "/entrypoint.sh"         10 minutes ago      Up 9 minutes        443/tcp, 0.0.0.0:15432->80/tcp   zepalheta-pgadmin
+		aab99f3d8c07        qaninja/zp-api      "docker-entrypoint.s…"   10 minutes ago      Up 9 minutes        0.0.0.0:3333->3333/tcp           zepalheta-api
+		b0150f5b47ab        qaninja/zp-web      "docker-entrypoint.s…"   10 minutes ago      Up 9 minutes        0.0.0.0:3000->3000/tcp           zepalheta-web
+		$
+	
+24:48-26:06
+	docker exec -it zepalheta-api sh /home/node/api/steup.sh
+		yarn run v1.22.4
+		$ ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js schema:drop
+		Using ts-node version 8.8.2, typescript version 3.8.3
+		query: START TRANSACTION
+		query: SELECT 'DROP VIEW IF EXISTS "' || schemaname || '"."' || viewname || '" CASCADE;' as "query" FROM "pg_views" WHERE "schemaname" IN (current_schema()) AND "viewname" NOT IN ('geography_columns', 'geometry_columns', 'raster_columns', 'raster_overviews')
+		query: SELECT 'DROP TABLE IF EXISTS "' || schemaname || '"."' || tablename || '" CASCADE;' as "query" FROM "pg_tables" WHERE "schemaname" IN (current_schema()) AND "tablename" NOT IN ('spatial_ref_sys')
+		query: SELECT 'DROP TYPE IF EXISTS "' || n.nspname || '"."' || t.typname || '" CASCADE;' as "query" FROM "pg_type" "t" INNER JOIN "pg_enum" "e" ON "e"."enumtypid" = "t"."oid" INNER JOIN "pg_namespace" "n" ON "n"."oid" = "t"."typnamespace" WHERE "n"."nspname" IN (current_schema()) GROUP BY "n"."nspname", "t"."typname"
+		query: COMMIT
+		Database schema has been successfully dropped.
+		Done in 1.67s.
+		yarn run v1.22.4
+		$ ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run
+		Using ts-node version 8.8.2, typescript version 3.8.3
+		query: SELECT * FROM "information_schema"."tables" WHERE "table_schema" = current_schema() AND "table_name" = 'migrations'
+		query: CREATE TABLE "migrations" ("id" SERIAL NOT NULL, "timestamp" bigint NOT NULL, "name" character varying NOT NULL, CONSTRAINT "PK_8c82d7f526340ab734260ea46be" PRIMARY KEY ("id"))
+		query: SELECT * FROM "migrations" "migrations" ORDER BY "id" DESC
+		0 migrations are already loaded in the database.
+		5 migrations were found in the source code.
+		5 migrations are new migrations that needs to be executed.
+		query: START TRANSACTION
+		query: CREATE TABLE "customers" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "name" varchar NOT NULL, "cpf" varchar NOT NULL, "phone_number" varchar NOT NULL, "address" varchar NOT NULL, "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), CONSTRAINT "UQ_413de651cfd9c576b99cec83fd3" UNIQUE ("cpf"), CONSTRAINT "PK_133ec679a801fab5e070f73d3ea" PRIMARY KEY ("id"))
+		query: INSERT INTO "migrations"("timestamp", "name") VALUES ($1, $2) -- PARAMETERS: [1586979442190,"CreateCustomers1586979442190"]
+		Migration CreateCustomers1586979442190 has been executed successfully.
+		query: CREATE TABLE "equipos" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "name" varchar NOT NULL, "daily_price" double precision NOT NULL, "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), CONSTRAINT "UQ_d6f2badf9a40917754fc8287d8c" UNIQUE ("name"), CONSTRAINT "PK_451fffd8d175b5b7aadbf5ba760" PRIMARY KEY ("id"))
+		query: INSERT INTO "migrations"("timestamp", "name") VALUES ($1, $2) -- PARAMETERS: [1586979942855,"CreateEquipos1586979942855"]
+		Migration CreateEquipos1586979942855 has been executed successfully.
+		query: CREATE TABLE "contracts" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "number" SERIAL NOT NULL, "customer_id" uuid NOT NULL, "daily_total_price" double precision NOT NULL, "delivery_price" double precision, "collect_price" double precision, "final_price" double precision, "collect_at" TIMESTAMP WITH TIME ZONE, "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), CONSTRAINT "UQ_7f9a578e633d6521bcc2d9cc8cb" UNIQUE ("number"), CONSTRAINT "PK_2c7b8f3a7b1acdd49497d83d0fb" PRIMARY KEY ("id"))
+		query: SELECT * FROM current_schema()
+		query: SELECT * FROM "information_schema"."tables" WHERE ("table_schema" = 'public' AND "table_name" = 'contracts')
+		query: SELECT *, ('"' || "udt_schema" || '"."' || "udt_name" || '"')::"regtype" AS "regtype" FROM "information_schema"."columns" WHERE ("table_schema" = 'public' AND "table_name" = 'contracts')
+		query: SELECT "ns"."nspname" AS "table_schema", "t"."relname" AS "table_name", "cnst"."conname" AS "constraint_name", pg_get_constraintdef("cnst"."oid") AS "expression", CASE "cnst"."contype" WHEN 'p' THEN 'PRIMARY' WHEN 'u' THEN 'UNIQUE' WHEN 'c' THEN 'CHECK' WHEN 'x' THEN 'EXCLUDE' END AS "constraint_type", "a"."attname" AS "column_name" FROM "pg_constraint" "cnst" INNER JOIN "pg_class" "t" ON "t"."oid" = "cnst"."conrelid" INNER JOIN "pg_namespace" "ns" ON "ns"."oid" = "cnst"."connamespace" LEFT JOIN "pg_attribute" "a" ON "a"."attrelid" = "cnst"."conrelid" AND "a"."attnum" = ANY ("cnst"."conkey") WHERE "t"."relkind" = 'r' AND (("ns"."nspname" = 'public' AND "t"."relname" = 'contracts'))
+		query: SELECT "ns"."nspname" AS "table_schema", "t"."relname" AS "table_name", "i"."relname" AS "constraint_name", "a"."attname" AS "column_name", CASE "ix"."indisunique" WHEN 't' THEN 'TRUE' ELSE'FALSE' END AS "is_unique", pg_get_expr("ix"."indpred", "ix"."indrelid") AS "condition", "types"."typname" AS "type_name" FROM "pg_class" "t" INNER JOIN "pg_index" "ix" ON "ix"."indrelid" = "t"."oid" INNER JOIN "pg_attribute" "a" ON "a"."attrelid" = "t"."oid"  AND "a"."attnum" = ANY ("ix"."indkey") INNER JOIN "pg_namespace" "ns" ON "ns"."oid" = "t"."relnamespace" INNER JOIN "pg_class" "i" ON "i"."oid" = "ix"."indexrelid" INNER JOIN "pg_type" "types" ON "types"."oid" = "a"."atttypid" LEFT JOIN "pg_constraint" "cnst" ON "cnst"."conname" = "i"."relname" WHERE "t"."relkind" = 'r' AND "cnst"."contype" IS NULL AND (("ns"."nspname" = 'public' AND "t"."relname" = 'contracts'))
+		query: SELECT "con"."conname" AS "constraint_name", "con"."nspname" AS "table_schema", "con"."relname" AS "table_name", "att2"."attname" AS "column_name", "ns"."nspname" AS "referenced_table_schema", "cl"."relname" AS "referenced_table_name", "att"."attname" AS "referenced_column_name", "con"."confdeltype" AS "on_delete", "con"."confupdtype" AS "on_update", "con"."condeferrable" AS "deferrable", "con"."condeferred" AS "deferred" FROM ( SELECT UNNEST ("con1"."conkey") AS "parent", UNNEST ("con1"."confkey") AS "child", "con1"."confrelid", "con1"."conrelid", "con1"."conname", "con1"."contype", "ns"."nspname", "cl"."relname", "con1"."condeferrable", CASE WHEN "con1"."condeferred" THEN 'INITIALLY DEFERRED' ELSE 'INITIALLY IMMEDIATE' END as condeferred, CASE "con1"."confdeltype" WHEN 'a' THEN 'NO ACTION' WHEN 'r' THEN 'RESTRICT' WHEN 'c' THEN 'CASCADE' WHEN 'n' THEN 'SET NULL' WHEN 'd' THEN 'SET DEFAULT' END as "confdeltype", CASE "con1"."confupdtype" WHEN 'a' THEN 'NO ACTION' WHEN 'r' THEN 'RESTRICT' WHEN 'c' THEN 'CASCADE' WHEN 'n' THEN 'SET NULL' WHEN 'd' THEN 'SET DEFAULT' END as "confupdtype" FROM "pg_class" "cl" INNER JOIN "pg_namespace" "ns" ON "cl"."relnamespace" = "ns"."oid" INNER JOIN "pg_constraint" "con1" ON "con1"."conrelid" = "cl"."oid" WHERE "con1"."contype" = 'f' AND (("ns"."nspname" = 'public' AND "cl"."relname" = 'contracts')) ) "con" INNER JOIN "pg_attribute" "att" ON "att"."attrelid" = "con"."confrelid" AND "att"."attnum" = "con"."child" INNER JOIN "pg_class" "cl" ON "cl"."oid" = "con"."confrelid" INNER JOIN "pg_namespace" "ns" ON "cl"."relnamespace" = "ns"."oid" INNER JOIN "pg_attribute" "att2" ON "att2"."attrelid" = "con"."conrelid" AND "att2"."attnum" = "con"."parent"
+		query: ALTER TABLE "contracts" ADD CONSTRAINT "FK_2e66f7950711366031e3200413d" FOREIGN KEY ("customer_id") REFERENCES "customers"("id") ON DELETE SET NULL ON UPDATE CASCADE
+		query: INSERT INTO "migrations"("timestamp", "name") VALUES ($1, $2) -- PARAMETERS: [1586980394440,"CreateContracts1586980394440"]
+		Migration CreateContracts1586980394440 has been executed successfully.
+		query: CREATE TABLE "contract_items" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "contract_id" uuid NOT NULL, "equipo_id" uuid NOT NULL, "quantity" integer NOT NULL, "price_quantity_daily" double precision NOT NULL, "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), CONSTRAINT "PK_490c7394f3b09ee92c41668a156" PRIMARY KEY ("id"))
+		query: SELECT * FROM current_schema()
+		query: SELECT * FROM "information_schema"."tables" WHERE ("table_schema" = 'public' AND "table_name" = 'contract_items')
+		query: SELECT *, ('"' || "udt_schema" || '"."' || "udt_name" || '"')::"regtype" AS "regtype" FROM "information_schema"."columns" WHERE ("table_schema" = 'public' AND "table_name" = 'contract_items')
+		query: SELECT "ns"."nspname" AS "table_schema", "t"."relname" AS "table_name", "cnst"."conname" AS "constraint_name", pg_get_constraintdef("cnst"."oid") AS "expression", CASE "cnst"."contype" WHEN 'p' THEN 'PRIMARY' WHEN 'u' THEN 'UNIQUE' WHEN 'c' THEN 'CHECK' WHEN 'x' THEN 'EXCLUDE' END AS "constraint_type", "a"."attname" AS "column_name" FROM "pg_constraint" "cnst" INNER JOIN "pg_class" "t" ON "t"."oid" = "cnst"."conrelid" INNER JOIN "pg_namespace" "ns" ON "ns"."oid" = "cnst"."connamespace" LEFT JOIN "pg_attribute" "a" ON "a"."attrelid" = "cnst"."conrelid" AND "a"."attnum" = ANY ("cnst"."conkey") WHERE "t"."relkind" = 'r' AND (("ns"."nspname" = 'public' AND "t"."relname" = 'contract_items'))
+		query: SELECT "ns"."nspname" AS "table_schema", "t"."relname" AS "table_name", "i"."relname" AS "constraint_name", "a"."attname" AS "column_name", CASE "ix"."indisunique" WHEN 't' THEN 'TRUE' ELSE'FALSE' END AS "is_unique", pg_get_expr("ix"."indpred", "ix"."indrelid") AS "condition", "types"."typname" AS "type_name" FROM "pg_class" "t" INNER JOIN "pg_index" "ix" ON "ix"."indrelid" = "t"."oid" INNER JOIN "pg_attribute" "a" ON "a"."attrelid" = "t"."oid"  AND "a"."attnum" = ANY ("ix"."indkey") INNER JOIN "pg_namespace" "ns" ON "ns"."oid" = "t"."relnamespace" INNER JOIN "pg_class" "i" ON "i"."oid" = "ix"."indexrelid" INNER JOIN "pg_type" "types" ON "types"."oid" = "a"."atttypid" LEFT JOIN "pg_constraint" "cnst" ON "cnst"."conname" = "i"."relname" WHERE "t"."relkind" = 'r' AND "cnst"."contype" IS NULL AND (("ns"."nspname" = 'public' AND "t"."relname" = 'contract_items'))
+		query: SELECT "con"."conname" AS "constraint_name", "con"."nspname" AS "table_schema", "con"."relname" AS "table_name", "att2"."attname" AS "column_name", "ns"."nspname" AS "referenced_table_schema", "cl"."relname" AS "referenced_table_name", "att"."attname" AS "referenced_column_name", "con"."confdeltype" AS "on_delete", "con"."confupdtype" AS "on_update", "con"."condeferrable" AS "deferrable", "con"."condeferred" AS "deferred" FROM ( SELECT UNNEST ("con1"."conkey") AS "parent", UNNEST ("con1"."confkey") AS "child", "con1"."confrelid", "con1"."conrelid", "con1"."conname", "con1"."contype", "ns"."nspname", "cl"."relname", "con1"."condeferrable", CASE WHEN "con1"."condeferred" THEN 'INITIALLY DEFERRED' ELSE 'INITIALLY IMMEDIATE' END as condeferred, CASE "con1"."confdeltype" WHEN 'a' THEN 'NO ACTION' WHEN 'r' THEN 'RESTRICT' WHEN 'c' THEN 'CASCADE' WHEN 'n' THEN 'SET NULL' WHEN 'd' THEN 'SET DEFAULT' END as "confdeltype", CASE "con1"."confupdtype" WHEN 'a' THEN 'NO ACTION' WHEN 'r' THEN 'RESTRICT' WHEN 'c' THEN 'CASCADE' WHEN 'n' THEN 'SET NULL' WHEN 'd' THEN 'SET DEFAULT' END as "confupdtype" FROM "pg_class" "cl" INNER JOIN "pg_namespace" "ns" ON "cl"."relnamespace" = "ns"."oid" INNER JOIN "pg_constraint" "con1" ON "con1"."conrelid" = "cl"."oid" WHERE "con1"."contype" = 'f' AND (("ns"."nspname" = 'public' AND "cl"."relname" = 'contract_items')) ) "con" INNER JOIN "pg_attribute" "att" ON "att"."attrelid" = "con"."confrelid" AND "att"."attnum" = "con"."child" INNER JOIN "pg_class" "cl" ON "cl"."oid" = "con"."confrelid" INNER JOIN "pg_namespace" "ns" ON "cl"."relnamespace" = "ns"."oid" INNER JOIN "pg_attribute" "att2" ON "att2"."attrelid" = "con"."conrelid" AND "att2"."attnum" = "con"."parent"
+		query: ALTER TABLE "contract_items" ADD CONSTRAINT "FK_4978fbb3adb83d6973d56e71227" FOREIGN KEY ("contract_id") REFERENCES "contracts"("id") ON DELETE CASCADE ON UPDATE CASCADE
+		query: ALTER TABLE "contract_items" ADD CONSTRAINT "FK_68c59e1a426ae901bb6797f61fd" FOREIGN KEY ("equipo_id") REFERENCES "equipos"("id") ON DELETE SET NULL ON UPDATE CASCADE
+		query: INSERT INTO "migrations"("timestamp", "name") VALUES ($1, $2) -- PARAMETERS: [1586980935081,"CreateContractItems1586980935081"]
+		Migration CreateContractItems1586980935081 has been executed successfully.
+		query: CREATE TABLE "users" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "name" varchar NOT NULL, "email" varchar NOT NULL, "password_hash" varchar NOT NULL, "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), CONSTRAINT "UQ_97672ac88f789774dd47f7c8be3" UNIQUE ("email"), CONSTRAINT "PK_a3ffb1c0c8416b9fc6f907b7433" PRIMARY KEY ("id"))
+		query: INSERT INTO "migrations"("timestamp", "name") VALUES ($1, $2) -- PARAMETERS: [1587133494361,"CreateUsers1587133494361"]
+		Migration CreateUsers1587133494361 has been executed successfully.
+		query: COMMIT
+		Done in 2.40s.
+		yarn run v1.22.4
+		$ ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm-seeding/dist/cli.js seed
+		Using ts-node version 8.8.2, typescript version 3.8.3
+		🌱  TypeORM Seeding v1.6.0
+		✔ ORM Config loaded
+		✔ Factories are imported
+		✔ Seeders are imported
+		✔ Database connected
+		✔ Seeder UserAdmin executed
+		👍  Finished Seeding
+		Done in 2.18s.
+		$ 
+
+26:33-
+29:24-29:45
+	arquivo hosts - no Windows em C:\Windows\System32\etc\drivers
+	- no Linux em /etc
+		## 20200819 MM --- 127.0.0.1	localhost
+		127.0.1.1	Lenovo-Z40-70-celo
+
+		# The following lines are desirable for IPv6 capable hosts
+		::1     ip6-localhost ip6-loopback
+		fe00::0 ip6-localnet
+		ff00::0 ip6-mcastprefix
+		ff02::1 ip6-allnodes
+		ff02::2 ip6-allrouters
+
+		## 20200819 MM --- curso RoboCamp6ed
+		127.0.0.1 zepalheta-postgres
+		127.0.0.1 zepalheta-pgadmin
+		127.0.0.1 zepalheta-web
+		127.0.0.1 zepalheta-api
+		
+27:05 
+	Kitematic - para checar IP do ambiente docker (informado em qualquer dos containers, mudando apenas a porta usada por cada um)
+	
+-30:17
+	admin@zepalheta.com.br : pwd123	
