@@ -1,7 +1,7 @@
 ***Settings***
 Documentation       Login
 
-Library     SeleniumLibrary 
+Resource    ../resources/kws_firefox.robot
 
 # BDD Comportamento (Gherkin: Dado, Quando, Então) 
 # só é BDD ou ATDD se o desenvolvedor ler a especificação e desenvolver orientado a ela
@@ -12,21 +12,9 @@ Login do Administrador
     Submeto minhas credenciais  admin@zepalheta.com.br  pwd123
     Devo ver a área logada
 
-***Keywords***
-# robotframework.org / LIBRARIES - EXTERNAL - SeleniumLibrary / [github] keyword documentation
-Acesso a página Login
-    # Open Browser    http://zepalheta-web:3000      chrome
-    Open Browser    http://zepalheta-web:3000      firefox
-
-Submeto minhas credenciais
-    [Arguments]     ${email}    ${password}
-
-    Input Text      id:txtEmail                     ${email}
-    Input Text      css:input[placeholder=Senha]    ${password}
-    Click Element   xpath://button[text()='Entrar']
-    Maximize Browser Window  
-
-Devo ver a área logada
-    # Wait Until Element Is Visible      //strong[text()='Sair']     5
-    Wait Until Page Contains    Aluguéis    5
-    Close Browser
+Senha Incorreta
+    [tags]  inv_pass
+    Acesso a página Login
+    Submeto minhas credenciais  admin@zepalheta.com.br  pww112
+    Devo ver um toaster com mensagem    Ocorreu um erro ao fazer login, cheque as credenciais.
+    
