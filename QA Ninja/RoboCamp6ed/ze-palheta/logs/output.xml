@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.2 on linux)" generated="20200824 21:37:26.894" rpa="false">
+<suite id="s1" name="Tests" source="/media/celo-ub/Windows8_OS/Users/Celo/Documents/MEGAsync/Study/IT/QA_automation/QA Ninja/RoboCamp6ed/ze-palheta/tests">
+<suite id="s1-s1" name="Login Firefox" source="/media/celo-ub/Windows8_OS/Users/Celo/Documents/MEGAsync/Study/IT/QA_automation/QA Ninja/RoboCamp6ed/ze-palheta/tests/login_firefox.robot">
+<test id="s1-s1-t1" name="Senha Incorreta">
+<kw name="Acesso a página Login" library="kws_firefox">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>http://zepalheta-web:3000</arg>
+<arg>firefox</arg>
+</arguments>
+<msg timestamp="20200824 21:37:27.032" level="INFO">Opening browser 'firefox' to base url 'http://zepalheta-web:3000'.</msg>
+<msg timestamp="20200824 21:37:27.033" level="INFO">Firefox driver log is always forced to to: /media/celo-ub/Windows8_OS/Users/Celo/Documents/MEGAsync/Study/IT/QA_automation/QA Ninja/RoboCamp6ed/ze-palheta/logs/geckodriver-3.log</msg>
+<status status="PASS" starttime="20200824 21:37:27.032" endtime="20200824 21:37:31.845"></status>
+</kw>
+<status status="PASS" starttime="20200824 21:37:27.032" endtime="20200824 21:37:31.846"></status>
+</kw>
+<kw name="Submeto minhas credenciais" library="kws_firefox">
+<arguments>
+<arg>admin@zepalheta.com.br</arg>
+<arg>pww112</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:txtEmail</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200824 21:37:31.848" level="INFO">Typing text 'admin@zepalheta.com.br' into text field 'id:txtEmail'.</msg>
+<status status="PASS" starttime="20200824 21:37:31.847" endtime="20200824 21:37:32.047"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[placeholder=Senha]</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200824 21:37:32.048" level="INFO">Typing text 'pww112' into text field 'css:input[placeholder=Senha]'.</msg>
+<status status="PASS" starttime="20200824 21:37:32.047" endtime="20200824 21:37:32.087"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://button[text()='Entrar']</arg>
+</arguments>
+<msg timestamp="20200824 21:37:32.088" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
+<status status="PASS" starttime="20200824 21:37:32.087" endtime="20200824 21:37:32.359"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200824 21:37:32.359" endtime="20200824 21:37:32.650"></status>
+</kw>
+<status status="PASS" starttime="20200824 21:37:31.846" endtime="20200824 21:37:32.650"></status>
+</kw>
+<kw name="Devo ver um toaster com mensagem" library="kws_firefox">
+<arguments>
+<arg>Ocorreu um erro ao fazer login, cheque as credenciais.</arg>
+</arguments>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>css:div[type=error] p</arg>
+<arg>${expected_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200824 21:37:32.651" endtime="20200824 21:37:32.674"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200824 21:37:32.674" endtime="20200824 21:37:35.720"></status>
+</kw>
+<status status="PASS" starttime="20200824 21:37:32.651" endtime="20200824 21:37:35.720"></status>
+</kw>
+<tags>
+<tag>inv_login</tag>
+</tags>
+<status status="PASS" starttime="20200824 21:37:27.031" endtime="20200824 21:37:35.720" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="Senha em branco">
+<kw name="Acesso a página Login" library="kws_firefox">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>http://zepalheta-web:3000</arg>
+<arg>firefox</arg>
+</arguments>
+<msg timestamp="20200824 21:37:35.722" level="INFO">Opening browser 'firefox' to base url 'http://zepalheta-web:3000'.</msg>
+<msg timestamp="20200824 21:37:35.723" level="INFO">Firefox driver log is always forced to to: /media/celo-ub/Windows8_OS/Users/Celo/Documents/MEGAsync/Study/IT/QA_automation/QA Ninja/RoboCamp6ed/ze-palheta/logs/geckodriver-4.log</msg>
+<status status="PASS" starttime="20200824 21:37:35.722" endtime="20200824 21:37:40.362"></status>
+</kw>
+<status status="PASS" starttime="20200824 21:37:35.721" endtime="20200824 21:37:40.363"></status>
+</kw>
+<kw name="Submeto minhas credenciais" library="kws_firefox">
+<arguments>
+<arg>admin@zepalheta.com.br</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:txtEmail</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200824 21:37:40.364" level="INFO">Typing text 'admin@zepalheta.com.br' into text field 'id:txtEmail'.</msg>
+<status status="PASS" starttime="20200824 21:37:40.364" endtime="20200824 21:37:40.508"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[placeholder=Senha]</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200824 21:37:40.509" level="INFO">Typing text '' into text field 'css:input[placeholder=Senha]'.</msg>
+<status status="PASS" starttime="20200824 21:37:40.508" endtime="20200824 21:37:40.539"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://button[text()='Entrar']</arg>
+</arguments>
+<msg timestamp="20200824 21:37:40.539" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
+<status status="PASS" starttime="20200824 21:37:40.539" endtime="20200824 21:37:40.817"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200824 21:37:40.817" endtime="20200824 21:37:41.243"></status>
+</kw>
+<status status="PASS" starttime="20200824 21:37:40.363" endtime="20200824 21:37:41.243"></status>
+</kw>
+<kw name="Devo ver um toaster com mensagem" library="kws_firefox">
+<arguments>
+<arg>O campo senha é obrigatório</arg>
+</arguments>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>css:div[type=error] p</arg>
+<arg>${expected_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200824 21:37:41.244" endtime="20200824 21:37:41.274"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200824 21:37:41.274" endtime="20200824 21:37:44.166"></status>
+</kw>
+<status status="PASS" starttime="20200824 21:37:41.243" endtime="20200824 21:37:44.167"></status>
+</kw>
+<tags>
+<tag>inv_login</tag>
+</tags>
+<status status="PASS" starttime="20200824 21:37:35.721" endtime="20200824 21:37:44.167" critical="yes"></status>
+</test>
+<test id="s1-s1-t3" name="Email em branco">
+<kw name="Acesso a página Login" library="kws_firefox">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>http://zepalheta-web:3000</arg>
+<arg>firefox</arg>
+</arguments>
+<msg timestamp="20200824 21:37:44.170" level="INFO">Opening browser 'firefox' to base url 'http://zepalheta-web:3000'.</msg>
+<msg timestamp="20200824 21:37:44.172" level="INFO">Firefox driver log is always forced to to: /media/celo-ub/Windows8_OS/Users/Celo/Documents/MEGAsync/Study/IT/QA_automation/QA Ninja/RoboCamp6ed/ze-palheta/logs/geckodriver-5.log</msg>
+<status status="PASS" starttime="20200824 21:37:44.169" endtime="20200824 21:37:48.804"></status>
+</kw>
+<status status="PASS" starttime="20200824 21:37:44.169" endtime="20200824 21:37:48.805"></status>
+</kw>
+<kw name="Submeto minhas credenciais" library="kws_firefox">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>pww112</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:txtEmail</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200824 21:37:48.806" level="INFO">Typing text '' into text field 'id:txtEmail'.</msg>
+<status status="PASS" starttime="20200824 21:37:48.806" endtime="20200824 21:37:48.852"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[placeholder=Senha]</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200824 21:37:48.853" level="INFO">Typing text 'pww112' into text field 'css:input[placeholder=Senha]'.</msg>
+<status status="PASS" starttime="20200824 21:37:48.852" endtime="20200824 21:37:48.901"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://button[text()='Entrar']</arg>
+</arguments>
+<msg timestamp="20200824 21:37:48.902" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
+<status status="PASS" starttime="20200824 21:37:48.901" endtime="20200824 21:37:49.315"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200824 21:37:49.316" endtime="20200824 21:37:49.616"></status>
+</kw>
+<status status="PASS" starttime="20200824 21:37:48.805" endtime="20200824 21:37:49.616"></status>
+</kw>
+<kw name="Devo ver um toaster com mensagem" library="kws_firefox">
+<arguments>
+<arg>O campo email é obrigatório!</arg>
+</arguments>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>css:div[type=error] p</arg>
+<arg>${expected_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200824 21:37:49.617" endtime="20200824 21:37:49.638"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200824 21:37:49.638" endtime="20200824 21:37:53.975"></status>
+</kw>
+<status status="PASS" starttime="20200824 21:37:49.617" endtime="20200824 21:37:53.976"></status>
+</kw>
+<tags>
+<tag>inv_login</tag>
+</tags>
+<status status="PASS" starttime="20200824 21:37:44.168" endtime="20200824 21:37:53.976" critical="yes"></status>
+</test>
+<test id="s1-s1-t4" name="Email e senha em branco">
+<kw name="Acesso a página Login" library="kws_firefox">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>http://zepalheta-web:3000</arg>
+<arg>firefox</arg>
+</arguments>
+<msg timestamp="20200824 21:37:53.978" level="INFO">Opening browser 'firefox' to base url 'http://zepalheta-web:3000'.</msg>
+<msg timestamp="20200824 21:37:53.979" level="INFO">Firefox driver log is always forced to to: /media/celo-ub/Windows8_OS/Users/Celo/Documents/MEGAsync/Study/IT/QA_automation/QA Ninja/RoboCamp6ed/ze-palheta/logs/geckodriver-6.log</msg>
+<status status="PASS" starttime="20200824 21:37:53.977" endtime="20200824 21:37:59.694"></status>
+</kw>
+<status status="PASS" starttime="20200824 21:37:53.977" endtime="20200824 21:37:59.695"></status>
+</kw>
+<kw name="Submeto minhas credenciais" library="kws_firefox">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:txtEmail</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200824 21:37:59.697" level="INFO">Typing text '' into text field 'id:txtEmail'.</msg>
+<status status="PASS" starttime="20200824 21:37:59.696" endtime="20200824 21:37:59.740"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[placeholder=Senha]</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200824 21:37:59.741" level="INFO">Typing text '' into text field 'css:input[placeholder=Senha]'.</msg>
+<status status="PASS" starttime="20200824 21:37:59.740" endtime="20200824 21:37:59.766"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://button[text()='Entrar']</arg>
+</arguments>
+<msg timestamp="20200824 21:37:59.766" level="INFO">Clicking element 'xpath://button[text()='Entrar']'.</msg>
+<status status="PASS" starttime="20200824 21:37:59.766" endtime="20200824 21:38:00.111"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200824 21:38:00.112" endtime="20200824 21:38:00.404"></status>
+</kw>
+<status status="PASS" starttime="20200824 21:37:59.695" endtime="20200824 21:38:00.404"></status>
+</kw>
+<kw name="Devo ver um toaster com mensagem" library="kws_firefox">
+<arguments>
+<arg>Os campos email e senha não foram preenchidos!</arg>
+</arguments>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>css:div[type=error] p</arg>
+<arg>${expected_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200824 21:38:00.405" endtime="20200824 21:38:00.428"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200824 21:38:00.428" endtime="20200824 21:38:03.632"></status>
+</kw>
+<status status="PASS" starttime="20200824 21:38:00.405" endtime="20200824 21:38:03.632"></status>
+</kw>
+<tags>
+<tag>inv_login</tag>
+</tags>
+<status status="PASS" starttime="20200824 21:37:53.977" endtime="20200824 21:38:03.632" critical="yes"></status>
+</test>
+<doc>Login</doc>
+<status status="PASS" starttime="20200824 21:37:26.916" endtime="20200824 21:38:03.633"></status>
+</suite>
+<status status="PASS" starttime="20200824 21:37:26.897" endtime="20200824 21:38:03.636"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0">Critical Tests</stat>
+<stat pass="4" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0">inv_login</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="4" fail="0" id="s1-s1" name="Login Firefox">Tests.Login Firefox</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

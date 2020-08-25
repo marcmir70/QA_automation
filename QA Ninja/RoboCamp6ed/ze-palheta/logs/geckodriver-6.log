@@ -1,0 +1,7 @@
+1598315874008	geckodriver	INFO	Listening on 127.0.0.1:60933
+1598315875020	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileNVRtpg"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1598315877535	Marionette	INFO	Listening on port 41845
+1598315877630	Marionette	WARN	TLS certificate errors will be ignored for this session
+1598315880430	Marionette	INFO	Stopped listening on port 41845
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
