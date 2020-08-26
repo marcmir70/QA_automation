@@ -1,11 +1,6 @@
-***Settings***
-Library     SeleniumLibrary 
-
 ***Keywords***
-# robotframework.org / LIBRARIES - EXTERNAL - SeleniumLibrary / [github] keyword documentation
 Acesso a página Login
-    Open Browser    http://zepalheta-web:3000      chrome
-    # Open Browser    http://zepalheta-web:3000      firefox
+    Go To       http://zepalheta-web:3000
 
 Submeto minhas credenciais
     [Arguments]     ${email}    ${password}
@@ -13,15 +8,12 @@ Submeto minhas credenciais
     Input Text      id:txtEmail                     ${email}
     Input Text      css:input[placeholder=Senha]    ${password}
     Click Element   xpath://button[text()='Entrar']
-    Maximize Browser Window  
 
 Devo ver a área logada
     # Wait Until Element Is Visible      //strong[text()='Sair']     5
     Wait Until Page Contains    Aluguéis    5
-    Close Browser
 
-Devo ver um toaster com mensagem
+Devo ver toaster com mensagem
     [Arguments]     ${expected_message}
 
     Wait Until Element Contains    css:div[type=error] p    ${expected_message}
-    Close Browser

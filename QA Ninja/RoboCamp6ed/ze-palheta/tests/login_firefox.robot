@@ -1,37 +1,16 @@
 ***Settings***
 Documentation       Login
 
-Resource    ../resources/kws_firefox.robot
+Resource    ../resources/base_firefox.robot
 
-# BDD Comportamento (Gherkin: Dado, Quando, Então) 
-# só é BDD ou ATDD se o desenvolvedor ler a especificação e desenvolver orientado a ela
+#Gancho - executa keywords antes da execução de todos step de cada caso de teste
+Test Setup          Start Session
+
+#Gancho - executa keywords após execução de todos step de cada caso de teste
+Test Teardown       Finish Session
 
 ***Test Cases***
 Login do Administrador
     Acesso a página Login
-    Submeto minhas credenciais  admin@zepalheta.com.br  pwd123
+    Submeto minhas credenciais      admin@zepalheta.com.br      pwd123
     Devo ver a área logada
-
-Senha Incorreta
-    [tags]  inv_login
-    Acesso a página Login
-    Submeto minhas credenciais  admin@zepalheta.com.br  pww112
-    Devo ver um toaster com mensagem    Ocorreu um erro ao fazer login, cheque as credenciais.
-
-Senha em branco
-    [tags]  inv_login
-    Acesso a página Login
-    Submeto minhas credenciais  admin@zepalheta.com.br  ${EMPTY}
-    Devo ver um toaster com mensagem    O campo senha é obrigatório
-    
-Email em branco
-    [tags]  inv_login
-    Acesso a página Login
-    Submeto minhas credenciais    ${EMPTY}  pww112
-    Devo ver um toaster com mensagem    O campo email é obrigatório!
-
-Email e senha em branco
-    [tags]  inv_login
-    Acesso a página Login
-    Submeto minhas credenciais    ${EMPTY}  ${EMPTY}
-    Devo ver um toaster com mensagem    Os campos email e senha não foram preenchidos!
