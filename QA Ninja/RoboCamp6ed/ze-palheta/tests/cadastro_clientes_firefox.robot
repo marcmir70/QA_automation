@@ -1,7 +1,7 @@
 ***Settings***
 Documentation       Cadastro de clientes
 
-Resource    ../resources/base.robot
+Resource    ../resources/base_firefox.robot
 
 Test Setup          Login Session
 Test Teardown       Finish Session    
