@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20200716 22:47:33.419" rpa="false">
+<suite id="s1" name="consultaSimples" source="C:\Users\Celo\Documents\MEGAsync\Study\IT\learning_QA_automation\Robot\DPNC\DPNC_passo3\consultaSimples.robot">
+<test id="s1-t1" name="Consulta Simples Nacional">
+<kw name="Dado que acesso a página principal">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>http://www8.receita.fazenda.gov.br/SimplesNacional/aplicacoes.aspx?id=21</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200716 22:47:34.627" level="INFO">Opening browser 'chrome' to base url 'http://www8.receita.fazenda.gov.br/SimplesNacional/aplicacoes.aspx?id=21'.</msg>
+<status status="PASS" starttime="20200716 22:47:34.626" endtime="20200716 22:47:47.271"></status>
+</kw>
+<status status="PASS" starttime="20200716 22:47:34.625" endtime="20200716 22:47:47.271"></status>
+</kw>
+<kw name="Quando submeto o CNPJ &quot;05358827000195&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[id=Cnpj]</arg>
+<arg>${cnpj}</arg>
+</arguments>
+<msg timestamp="20200716 22:47:47.274" level="INFO">Typing text '05358827000195' into text field 'css:input[id=Cnpj]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200716 22:47:48.002" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200716 22:47:47.391" endtime="20200716 22:47:48.002"></status>
+</kw>
+<msg timestamp="20200716 22:47:48.022" level="FAIL">Element with locator 'css:input[id=Cnpj]' not found.</msg>
+<status status="FAIL" starttime="20200716 22:47:47.274" endtime="20200716 22:47:48.023"></status>
+</kw>
+<status status="FAIL" starttime="20200716 22:47:47.272" endtime="20200716 22:47:48.023"></status>
+</kw>
+<status status="FAIL" starttime="20200716 22:47:34.622" endtime="20200716 22:47:48.024" critical="yes">Element with locator 'css:input[id=Cnpj]' not found.</status>
+</test>
+<doc>Consulta Simples Nacional por Optantes</doc>
+<status status="FAIL" starttime="20200716 22:47:33.431" endtime="20200716 22:47:48.028"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="consultaSimples">consultaSimples</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

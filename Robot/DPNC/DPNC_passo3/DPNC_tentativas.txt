@@ -1,0 +1,9 @@
+input[type=submit]
+
+    Input Text      id:#Cnpj.form-control numeric    ${cnpj}
+    Input Text      id:Cnpj    ${cnpj}
+    Input Text      css:input[id=Cnpj]    ${cnpj}
+    Input Text      id:Cnpj, name:Cnpj    ${cnpj}
+    Click Element   css:input[type=submit]
+    Click Element   css:input[id=btnSubmit
+    Click Element   css:input[id=btnSubmit][type=submit]
