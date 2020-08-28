@@ -26,10 +26,10 @@ Novo cliente
 Dado que acesso o formulário de cadastro de clientes
     # para que não busque os elementos ainda na página de login...
     # Sleep       2
-    Wait Until Element is Visible       css:a[href$=customers]      5
-    Click Element                       css:a[href$=customers]
-    Wait Until Element is Visible       css:a[href$=register]       5
-    Click Element                       css:a[href$=register]
+    Wait Until Element is Visible       ${NAV_CUSTOMERS}      5
+    Click Element                       ${NAV_CUSTOMERS}
+    Wait Until Element is Visible       ${CUSTOMERS_FORM}     5
+    Click Element                       ${CUSTOMERS_FORM}
 
     #temporário
     Sleep       5
