@@ -11,8 +11,8 @@ Novo cliente
 # cenário-chave de especificação bem construída
 # - melhor escrever pensando no negócio e de forma colaborativa!
     Dado que acesso o formulário de cadastro de clientes
-    # Quando faço a inclusão desse cliente:
-    # ...     Bon Jovi    00000001406     Rua dos Bugs, 1000      11999999999
+    Quando faço a inclusão desse cliente:
+    ...     Bon Jovi    00000001406     Rua dos Bugs, 1000      11999888777
     # Então devo ver a notificação:   Cliente cadastrado com sucesso!
 
 # note que não é feito da forma abaixo - que seria uma escrita tradicional de caso de teste!
@@ -33,6 +33,10 @@ Dado que acesso o formulário de cadastro de clientes
 
     #temporário
     Sleep       5
-# Quando faço a inclusão desse cliente:
-#     ...     Bon Jovi    00000001406     Rua dos Bugs, 1000      11999999999
+Quando faço a inclusão desse cliente:
+    [Arguments]     ${name}     ${cpf}      ${address}      ${phone_number}
+
+    Register New Customer     ${name}     ${cpf}      ${address}      ${phone_number}
+    Sleep       10
 # Então devo ver a notificação:   Cliente cadastrado com sucesso!
+
