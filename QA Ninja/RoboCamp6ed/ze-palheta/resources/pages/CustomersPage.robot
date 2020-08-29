@@ -12,6 +12,8 @@ Register New Customer
     Input Text      id:cpf              ${cpf}
     Input Text      id:address          ${address}
     Input Text      id:phone_number     ${phone_number}
+    Sleep   5
 
-#    Click Element   xpath://button[text()='CADASTRAR']      
+    Click Element   xpath://button[text()='CADASTRAR']      
+    Sleep   5
     # encontrei o locator acima também como //*[@id="root"]/div[1]/div[2]/div/header/section/button[2]
