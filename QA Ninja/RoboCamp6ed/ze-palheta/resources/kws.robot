@@ -27,6 +27,9 @@ Dado que acesso o formulário de cadastro de clientes
 Quando faço a inclusão desse cliente:
     [Arguments]     ${name}     ${cpf}      ${address}      ${phone_number}
 
+# keyword para o método (função) Python
+    Remove Customer By Cpf      ${cpf}
+
     Register New Customer     ${name}     ${cpf}      ${address}      ${phone_number}
     Sleep   5
 
